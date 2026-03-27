@@ -1,15 +1,9 @@
-
-
-
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const Message = require('../models/message');
  
-// ✅ PERFORMANCE FIX: Create transporter ONCE when server starts
-// Previously this was inside the route handler — meaning a new SMTP
-// connection was opened on every single form submission (3–8s delay).
-// Moving it here reuses the same connection and is much faster.
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
