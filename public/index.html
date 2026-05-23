@@ -888,7 +888,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   const message = document.querySelector('[name="message"]').value;
 
   try {
-    const res = await fetch('/api/contact', {  // ✅ FIXED
+    const res = await fetch('http://localhost:5000/api/contact', {  // ✅ FIXED
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
